@@ -1,0 +1,45 @@
+@use '../abstracts/abstracts' as *;
+
+.languages {
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-image: url('../../src/images/ellypses-right.svg');
+        position: absolute;
+        bottom: -200px;
+        right: 0;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    h2 {
+        color: $white;
+        padding: 10px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    p {
+        color: $light-grey;
+        padding-bottom: 30px;
+    } 
+
+    .line {
+        margin-top: 5%;
+        background-color: $white;
+        width: 80%;
+        height: 1px;
+        margin-bottom: 30px;
+        align-items: center;
+    } 
+} 
+

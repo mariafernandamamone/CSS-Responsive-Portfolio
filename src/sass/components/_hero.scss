@@ -1,0 +1,123 @@
+@use '../abstracts/abstracts' as *;
+
+.hero {
+    background-color: $black; 
+    padding-top: 50px; 
+    position: relative; 
+    z-index: 0; 
+    overflow: hidden; 
+    @include breakpoint(tablet) {
+        
+        .hero-content {
+          display: flex;
+          flex-direction: row-reverse;  
+        }  
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center; 
+        @include breakpoint(tablet) {
+          display: none;
+          .content-tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+          }
+        }  
+    }
+
+    &-img {
+        position: relative; 
+        z-index: 1; 
+        @include breakpoint (tablet) {
+            display: none;
+        }
+        
+        
+        &::before {
+            content: '';        
+            background-image: url('../../src/images/ellypses.svg'); 
+            position: absolute;
+            left: -160px; 
+            top: 30%;    
+            transform: translateY(-50%); 
+            z-index: -1;
+            width: 300px;
+            height: 150px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        
+        
+        img {
+            background: linear-gradient(
+                to bottom,
+                rgba($black, 0.5),
+                rgba($dark-grey, 1)
+            );
+            display: block;
+            width: 174px; 
+            height: 242px;
+            margin: 0 auto;
+        }
+    }
+
+
+    &-title {
+        margin-top: 40px; 
+        margin-left: 10%;
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: $white;
+            line-height: 1.1;
+            max-width: 90%;
+            padding: 5%;
+
+            span {
+                text-decoration: none; 
+                border-bottom: 5px solid $green;
+            }
+        }
+    }
+
+    .hero-subtitle {
+        margin: 20px 0 30px;
+        max-width: 400px; 
+        color: $light-grey;
+        justify-content: center;
+        padding-left: 20%;
+    }
+
+    .hero-contact {
+        border-bottom: 5px solid $green;
+        a {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: $white;
+            transition: border-color 0.3s ease;
+            
+            padding-bottom: 3%;
+            &:hover {
+                color: $green;
+            }
+        }     
+    }
+    
+    .line {
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        background-color: $white;
+        width: 80%;
+        height: 1px;
+        margin-bottom: 30px;
+    } 
+}    

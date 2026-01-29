@@ -1,0 +1,160 @@
+@use '../abstracts/abstracts' as *;
+
+.contact {
+    background-color: $dark-grey;
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &-header {
+        margin-bottom: 40px;
+        h2 {
+            color: $white;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: $light-grey;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+    }
+
+    .wrapper {
+        background-color: $dark-grey;
+        width: 100%;
+        max-width: 1440px; 
+        margin: 0 auto;    
+        padding: 0 20px;
+    }
+
+    .form {
+        max-width: 450px;
+        margin: 0 auto;
+
+        &-group {
+            border: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left; 
+            position: relative;
+        }
+
+        &-input {
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 1px solid $white; 
+            background-color: transparent;
+            color: $white; 
+
+            &:placeholder-shown {
+                border-bottom-color: $white;
+            }
+
+            &:focus {
+                outline: none; 
+                border-bottom-color: 1px solid $green; 
+                color: $white;
+            }
+
+            &:valid:not(:focus) {
+               border-bottom-color: $green; 
+               color: $white;
+            }
+            
+            &:valid {
+                border-bottom-color: $green;
+                color: $white;
+            } 
+
+            &:not(:placeholder-shown):invalid {
+                border-bottom-color: $color-error;
+            }
+
+            &:not(:placeholder-shown):invalid + .error-icon {
+                display: block;
+            }
+            
+            &:not(:placeholder-shown):valid:not(:focus) + .error-icon {
+                display: none;
+            }
+            
+            &:focus + .error-icon {
+                display: none;
+            }
+                        
+            &:not(:placeholder-shown):invalid ~ .error-message {
+                display: block;
+            }
+            
+            &:valid ~ .error-message,
+            &:focus ~ .error-message {
+                display: none;
+            }
+        }
+
+    .error-icon {
+        position: absolute;
+        right: 0; 
+        bottom: 10px; 
+        display: none; 
+    }
+
+    .error-message {
+        color: $color-error;
+        font-size: 0.8em;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        bottom: -18px; 
+        display: none; 
+    }
+
+       
+}
+    .message {
+        resize: none; 
+        height: 130px;
+        background-image: url('../../src/images/ellypses.svg'); 
+        background-repeat: no-repeat;
+        background-position: left 30px; 
+        background-size: 50%; 
+        & textarea {
+            height: 100px;
+        } 
+    }
+
+    div.form-submit {
+        display: flex;
+        justify-content: flex-end; 
+        margin-top: 50px;
+    }
+
+    .btn-submit {
+        background: none;
+        border: none;
+        color: $white;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $green;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+        
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    .line {
+        margin-top: 20%;
+        background-color: $white;
+        width: 100%;
+        height: 1px;
+    } 
+}
