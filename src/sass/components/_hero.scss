@@ -1,123 +1,92 @@
-@use '../abstracts/abstracts' as *;
+@use "../abstracts/abstracts" as *;
 
 .hero {
-    background-color: $black; 
-    padding-top: 50px; 
-    position: relative; 
-    z-index: 0; 
-    overflow: hidden; 
-    @include breakpoint(tablet) {
-        
-        .hero-content {
-          display: flex;
-          flex-direction: row-reverse;  
-        }  
+  position: relative;
+  padding-top: 3rem;
+  text-align: center;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-img {
+    position: relative;
+    z-index: 1;
+
+    img {
+      display: block;
+      width: 174px;
+      height: auto;
+      position: relative;
+      z-index: 1;
     }
 
-    &-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        text-align: center; 
-        @include breakpoint(tablet) {
-          display: none;
-          .content-tablet {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-          }
-        }  
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.5rem;
+      left: -110px;
+      width: 260px;
+      height: 110px;
+      background: url("../../src/images/ellypses.svg") no-repeat;
+      background-size: contain;
+      z-index: 2;
     }
 
-    &-img {
-        position: relative; 
-        z-index: 1; 
-        @include breakpoint (tablet) {
-            display: none;
-        }
-        
-        
-        &::before {
-            content: '';        
-            background-image: url('../../src/images/ellypses.svg'); 
-            position: absolute;
-            left: -160px; 
-            top: 30%;    
-            transform: translateY(-50%); 
-            z-index: -1;
-            width: 300px;
-            height: 150px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        
-        
-        img {
-            background: linear-gradient(
-                to bottom,
-                rgba($black, 0.5),
-                rgba($dark-grey, 1)
-            );
-            display: block;
-            width: 174px; 
-            height: 242px;
-            margin: 0 auto;
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      right: -144px;
+      bottom: 0px;
+      width: 120px;
+      height: 120px;
+      background-image: url("../../src/images/circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 2;
     }
+  }
 
+  &-text {
+    position: relative;
+    margin-top: 1.5rem;
+    max-width: 340px;
+  }
 
-    &-title {
-        margin-top: 40px; 
-        margin-left: 10%;
+  &-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: $white;
 
-        h1 {
-            text-align: center;
-            font-size: 40px;
-            color: $white;
-            line-height: 1.1;
-            max-width: 90%;
-            padding: 5%;
-
-            span {
-                text-decoration: none; 
-                border-bottom: 5px solid $green;
-            }
-        }
+    span {
+      border-bottom: 4px solid $green;
     }
+  }
 
-    .hero-subtitle {
-        margin: 20px 0 30px;
-        max-width: 400px; 
-        color: $light-grey;
-        justify-content: center;
-        padding-left: 20%;
-    }
+  &-subtitle {
+    margin-bottom: 1.75rem;
+    color: $light-grey;
+  }
 
-    .hero-contact {
-        border-bottom: 5px solid $green;
-        a {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: $white;
-            transition: border-color 0.3s ease;
-            
-            padding-bottom: 3%;
-            &:hover {
-                color: $green;
-            }
-        }     
+  &-contact {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: $white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 4px solid $green;
+
+    &:hover {
+      color: $green;
     }
-    
-    .line {
-        align-items: center;
-        justify-content: center;
-        margin-top: 10%;
-        background-color: $white;
-        width: 80%;
-        height: 1px;
-        margin-bottom: 30px;
-    } 
-}    
+  }
+
+  &-line {
+      @include divider;
+  }
+}
