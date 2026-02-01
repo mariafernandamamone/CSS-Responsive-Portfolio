@@ -29,9 +29,8 @@
   }
 }
 
-@mixin divider($width: 70%, $max-width: 320px) {
-  width: $width;
-  max-width: $max-width;
+@mixin divider {
+  width: 90%;
   height: 1px;
   margin: 3rem auto 0;
   background-color: $white;

@@ -10,11 +10,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    @include breakpoint(tablet) {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      gap: 2rem;
+    }
   }
 
   &-img {
     position: relative;
     z-index: 1;
+    @include breakpoint(tablet) {
+      margin-right: -2rem;
+    }
 
     img {
       display: block;
@@ -22,6 +31,10 @@
       height: auto;
       position: relative;
       z-index: 1;
+      @include breakpoint(tablet) {
+        width: 325px;
+        height: 450px;
+      }
     }
 
     &::before {
@@ -34,6 +47,9 @@
       background: url("../../src/images/ellypses.svg") no-repeat;
       background-size: contain;
       z-index: 2;
+      @include breakpoint(tablet) {
+        display: none;
+      }
     }
 
     &::after {
@@ -41,12 +57,16 @@
       position: absolute;
       right: -144px;
       bottom: 0px;
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       background-image: url("../../src/images/circle.svg");
       background-repeat: no-repeat;
       background-size: contain;
       z-index: 2;
+      @include breakpoint(tablet) {
+        bottom: 0;
+        right: -50px;
+      }
     }
   }
 
@@ -54,14 +74,40 @@
     position: relative;
     margin-top: 1.5rem;
     max-width: 340px;
+    @include breakpoint(tablet) {
+      max-width: none;
+      flex: 1;
+      margin-top: 10%;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      margin-right: -3rem;
+    }
   }
 
   &-title {
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: $white;
-
+    position: relative;
+    @include breakpoint(tablet) {
+        text-align: left;
+        margin-left: 0;
+        margin-bottom: 50px;
+        margin-top: 0;
+        font-size: 65px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -70px;
+          left: -40px;
+          width: 600px;
+          height: 150px;
+          background: url('../../src/images/ellypses.svg')no-repeat;
+          z-index: 1;
+        }
+    }
     span {
       border-bottom: 4px solid $green;
     }
@@ -70,16 +116,20 @@
   &-subtitle {
     margin-bottom: 1.75rem;
     color: $light-grey;
+    @include breakpoint(tablet) {
+      text-align: left;
+      margin-top: 2rem;
+    }
   }
 
   &-contact {
-    display: inline-block;
     padding-bottom: 0.5rem;
     color: $white;
     font-weight: 700;
     letter-spacing: 2px;
     text-decoration: none;
     border-bottom: 4px solid $green;
+    text-align: center;
 
     &:hover {
       color: $green;
@@ -87,6 +137,6 @@
   }
 
   &-line {
-      @include divider;
+    @include divider;
   }
 }
