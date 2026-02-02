@@ -21,21 +21,17 @@
   &-img {
     position: relative;
     z-index: 1;
-    @include breakpoint(tablet) {
-      margin-right: -2rem;
-    }
+    display: flex;
+    justify-content: center;
 
     img {
-      display: block;
-      width: 174px;
-      height: auto;
-      position: relative;
-      z-index: 1;
-      @include breakpoint(tablet) {
-        width: 325px;
-        height: 450px;
+        display: block;
+        width: 174px;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
       }
-    }
 
     &::before {
       content: "";
@@ -47,9 +43,6 @@
       background: url("../../src/images/ellypses.svg") no-repeat;
       background-size: contain;
       z-index: 2;
-      @include breakpoint(tablet) {
-        display: none;
-      }
     }
 
     &::after {
@@ -63,12 +56,53 @@
       background-repeat: no-repeat;
       background-size: contain;
       z-index: 2;
-      @include breakpoint(tablet) {
-        bottom: 0;
-        right: -50px;
-      }
+    }
+  
+    @include breakpoint(tablet) {
+      width: 45%;
+      justify-content: flex-end;
+
+    img {
+      width: 325px;
+      height: 450px;
+      margin: 0;
+    }
+
+    &::before {
+      display: none; 
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
     }
   }
+
+  @include breakpoint(desktop) {
+    width: 50%;
+
+    img {
+      width: 445px; 
+      height: auto;
+    }
+
+     &::before {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 100px;
+      bottom: 80px;
+      width: 180px;
+      height: 180px;
+      background: url("../../src/images/fullcircle.svg") no-repeat;
+      background-size: contain;
+      z-index: 2;
+    }
+  }
+}
 
   &-text {
     position: relative;
@@ -91,25 +125,51 @@
     margin-bottom: 1.5rem;
     color: $white;
     position: relative;
-    @include breakpoint(tablet) {
-        text-align: left;
-        margin-left: 0;
-        margin-bottom: 50px;
-        margin-top: 0;
-        font-size: 65px;
-        &::before {
-          content: '';
-          position: absolute;
-          top: -70px;
-          left: -40px;
-          width: 600px;
-          height: 150px;
-          background: url('../../src/images/ellypses.svg')no-repeat;
-          z-index: 1;
-        }
+    z-index: 2;
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 150px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+      display: none;
     }
+
     span {
       border-bottom: 4px solid $green;
+    }
+
+    @include breakpoint(tablet) {
+      text-align: left;
+      font-size: 65px;
+      margin-bottom: 50px;
+      margin-top: 0;
+      margin-left: 0;
+
+      &::before {
+        display: block;
+        top: -70px;
+        left: -40px;
+        background-image: url('../../src/images/ellypses.svg');
+      }
+    }
+
+    @include breakpoint(desktop) {
+      max-width: 680px;
+      position: relative;
+      top: -40px;
+      &::before {
+        top: -90px;
+        left: -200px;
+        background-image: url('../../src/images/fullellypses.svg');
+      }
     }
   }
 
