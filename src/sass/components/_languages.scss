@@ -1,46 +1,58 @@
 @use '../abstracts/abstracts' as *;
 
 .languages {
-    background-color: $black;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    margin-top: 5%;
+  position: relative;
+  margin-top: 5%;
 
-    &::after {
-        content: '';
-        background-image: url('../../src/images/ellypses-right.svg');
-        position: absolute;
-        bottom: -200px;
-        right: 0;
-        transform: translateY(-50%);
-        width: 200px;
-        height: 200px;
-        background-size: contain;
-        background-repeat: no-repeat;
+  &::after {
+    content: '';
+    background-image: url('../../src/images/ellypses-right.svg');
+    position: absolute;
+    bottom: -200px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include breakpoint(tablet) {
+      width: 300px;  
     }
+  }
+  
+&__grid {
+    display: grid;
+    text-align: center;
+    gap: 24px;
 
     h2 {
         color: $white;
-        padding: 10px;
         font-size: 30px;
         font-weight: bold;
+        padding: 10px;
+        @include breakpoint(tablet) {
+            font-size: 50px;
+        }
     }
 
     p {
         color: $light-grey;
         padding-bottom: 30px;
-    } 
+    }
+
+        @include breakpoint(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            text-align: left;
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
     .line {
-        margin-top: 5%;
-        background-color: $white;
-        width: 80%;
-        height: 1px;
-        margin-bottom: 30px;
-        align-items: center;
-    } 
-} 
-
+        @include divider;
+        @include breakpoint(tablet) {
+            display: none;
+        } 
+    }
+}
