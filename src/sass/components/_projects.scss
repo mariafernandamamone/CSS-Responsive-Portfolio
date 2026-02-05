@@ -46,13 +46,16 @@
             align-items: center;
             margin: 0;
             padding: 0;
+            position: relative;
 
             &-img {
                 width: 100%;
                 align-items: center;
+                position: relative;
                 img {
                   width: 100%;
-                  align-items: center;  
+                  align-items: center; 
+                  transition: opacity 0.3s ease; 
                 }
             }
 
@@ -88,4 +91,37 @@
             }
         }
     }
+}
+
+@include breakpoint(desktop) {
+  .project-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@include breakpoint(desktop) {
+  .project:hover {
+    .project-links {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .project-img img {
+      opacity: 0.25;
+    }
+  }
 }
