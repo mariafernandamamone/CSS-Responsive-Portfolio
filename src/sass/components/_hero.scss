@@ -171,17 +171,7 @@
   }
 
   &-contact {
-    padding-bottom: 0.5rem;
-    color: $white;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-decoration: none;
-    border-bottom: 4px solid $green;
-    text-align: center;
-
-    &:hover {
-      color: $green;
-    }
+    @include link-primary;
   }
 
   &-line {
