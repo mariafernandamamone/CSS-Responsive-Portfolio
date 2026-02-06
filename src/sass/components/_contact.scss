@@ -8,6 +8,17 @@
     position: relative;
     overflow: hidden;
 
+    .small-ellypse {
+        position: absolute;
+        pointer-events: none;
+        top: 425px;
+        right: 330px;
+    }
+
+    .big-ellypse {
+        display: none;
+    }
+
     &-header {
         margin-bottom: 40px;
         h2 {
@@ -28,11 +39,13 @@
         max-width: 1440px; 
         margin: 0 auto;    
         padding: 0 20px;
+        overflow: visible;
     }
 
     .form {
         max-width: 450px;
         margin: 0 auto;
+        padding-bottom: 60px;
 
         &-group {
             border: none;
@@ -117,11 +130,7 @@
 }
     .message {
         resize: none; 
-        height: 130px;
-        background-image: url('../../src/images/ellypses.svg'); 
-        background-repeat: no-repeat;
-        background-position: left 30px; 
-        background-size: 50%; 
+        height: 130px; 
         & textarea {
             height: 100px;
         } 
@@ -134,27 +143,78 @@
     }
 
     .btn-submit {
-        background: none;
-        border: none;
-        color: $white;
-        font-size: 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding-bottom: 5px;
-        border-bottom: 2px solid $green;
-        cursor: pointer;
-        transition: border-color 0.3s ease;
-        
-
-        &:hover {
-            color: $green;
-        }
+        @include btn-primary;
     }
 
     .line {
         margin-top: 20%;
-        background-color: $white;
-        width: 100%;
-        height: 1px;
+        @include divider;
     } 
+}
+
+@include breakpoint(tablet) {
+    .contact {
+        position: relative;
+
+        .small-ellypse {
+          display: none;
+        }
+
+        .big-ellypse {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 100px;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@include breakpoint(desktop) {
+  .contact {
+    text-align: left;
+
+    .small-ellypse {
+        display: none;
+    }
+
+    .big-ellypse {
+        position: absolute;
+        display: block;
+        left: 10px;
+        bottom: 150px;
+        transform: translateX(-50%);
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+  }
+
+  .contact-header {
+    margin-bottom: 0;
+    max-width: 445px;
+
+    p {
+      margin: 0;
+      max-width: 450px;
+    }
+  }
+
+  .form {
+    margin: 0;
+    justify-self: end;
+    max-width: 600px; 
+    width: 100%;
+    margin: 0;
+  }
+
+
+  .line {
+    margin-top: 40%;
+    @include divider;
+  }
 }
