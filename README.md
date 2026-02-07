@@ -16,6 +16,17 @@ _Click the image to open the live site._
 
 ---
 
+## 📖 About This Project
+
+This project is a responsive portfolio website created as part of a front-end development challenge.  
+The main goal was to translate a Figma design into clean, semantic HTML and scalable SCSS, ensuring pixel consistency and a smooth responsive experience across devices.
+
+Special attention was given to layout structure, hover interactions on desktop, and maintaining visual balance between mobile, tablet, and desktop views.
+
+The project was built using Vite for fast development and optimized production builds, and deployed using GitHub Pages.
+
+---
+
 ## ✨ Features
 
 - Fully responsive layout (mobile, tablet, desktop)
