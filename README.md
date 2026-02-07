@@ -1,35 +1,88 @@
-# CSS-Modern-Art-Gallery
+# Responsive Portfolio Website
 
-This is a frontend project built with HTML, CSS (using Sass), and Vite.  
-It features two pages **home** and **location** for an Art Gallery micro-website.
+A fully responsive personal portfolio website built with **HTML**, **SCSS**, and **Vite**, based on a Figma design.  
+The project focuses on clean layout structure, modern CSS practices, and a mobile-first responsive approach.
 
-## 🖥 Preview
+👉 **Live Demo:**  
+[https://mariafernandamamone.github.io/CSS-Responsive-Portfolio/](https://mariafernandamamone.github.io/CSS-Responsive-Portfolio/)
 
-![Image](src/images/preview.png)
+---
 
-## 🚀 Technologies Used
+## 🔗 Preview
 
-- HTML5
-- CSS3 (Sass)
-- Vite (as development build tool)
+[![Portfolio Preview](PortfolioPreview.png)](https://mariafernandamamone.github.io/CSS-Responsive-Portfolio/)
 
-## 🚀 Setup Instructions
+_Click the image to open the live site._
+
+---
+
+## ✨ Features
+
+- Fully responsive layout (mobile, tablet, desktop)
+- CSS Grid and Flexbox for layout structure
+- Hover effects and desktop interactions
+- SCSS architecture with variables and mixins
+- Clean, semantic HTML
+- Optimized build with Vite
+- Deployed on GitHub Pages
+
+---
+
+## 🛠️ Built With
+
+- **HTML5**
+- **SCSS (Sass)**
+- **Vite**
+- **GitHub Pages**
+- **Figma** (design reference)
+
+---
+
+## 📱 Responsive Design
+
+The layout adapts to different screen sizes:
+
+- **Mobile:** stacked layout optimized for small screens
+- **Tablet:** flexible layout with improved spacing
+- **Desktop:** grid-based layout with hover overlays and enhanced interactions
+
+---
+
+## 🚀 Getting Started
 
 To run this project locally, follow these steps:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Frenchitas/CSS-Modern-Art-Gallery.git
+### 1️⃣ Clone the repository
 
-2. **Navigate into the project directory:**
-   ```bash
-   cd CSS-Modern-Art-Gallery
+```bash
+git clone https://github.com/mariafernandamamone/CSS-Responsive-Portfolio.git
+```
 
-3. **Install dependencies (make sure you have Node.js and npm installed):**
-   ```bash
-   npm install
+### 2️⃣ Navigate to the project folder
 
-4. **Start the development server:**
-    ```bash
-   npm run dev
-Your project should now be running at http://localhost:5173/ (or another port if already in use).
+```bash
+cd CSS-Responsive-Portfolio
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 4️⃣ Run the development server
+
+```bash
+npm run dev
+```
+
+### The project will be available at: http://localhost:5173
+
+---
+
+### 👩‍💻 Author
+
+María Fernanda Mamone
+
+LinkedIn:
+https://www.linkedin.com/in/maría-fernanda-a385ab317
