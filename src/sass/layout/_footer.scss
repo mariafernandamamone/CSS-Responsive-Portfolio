@@ -7,15 +7,22 @@ footer  {
         display: flex; 
         flex-direction: column; 
         align-items: center; 
-        padding-top: 5%;
+        padding-top: 50px;
+        padding-bottom: 30px;
         @include breakpoint(tablet) {
             flex-direction: row;
             justify-content: space-between;
         }
     }
 
+    @include breakpoint(tablet) {
+        img {
+            width: 250px;
+        }
+    }
+
     .social-icons {
-        width: 100%; 
+        width: 100%;
         ul {
             display: flex;
             width: 100%;
@@ -23,17 +30,25 @@ footer  {
             list-style: none;
             padding: 5%;
             margin: 0; 
+            @include breakpoint(tablet) {
+                justify-content: flex-end; 
+                padding: 0;
+                gap: 1.5rem;
+            }
         }
 
         li {
             margin: 0 10px;
+            @include breakpoint(tablet) {
+                margin: 0;
+            }
             a svg {
-              fill: $white;
-              transition: fill 0.3s ease;  
+                fill: $white;
+                transition: fill 0.3s ease;  
             }
              
             a:hover svg { 
-               fill: $green;      
+                fill: $green;      
             }
         } 
     }
